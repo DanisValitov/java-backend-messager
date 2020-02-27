@@ -57,7 +57,7 @@ public class ControllerService {
     public ResponseEntity<?> createNewUser(String userName, String password) {
         MyUser newUser = new MyUser();
         Permission permission = new Permission();
-        RolesEntity role = postgresService.getRoleByRole("user");
+        RolesEntity role = postgresService.getRoleByRole("USER");
 
         newUser.setName(userName);
         newUser.setPassword(password);

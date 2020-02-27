@@ -23,10 +23,10 @@ public class MyUserDetailsService implements UserDetailsService {
         MyUser myUser = myUsersRepo.findOneByName(s);
         List<GrantedAuthority> grantedAuthority = new ArrayList<>();
         myUser.getPermissions().forEach(permission -> {
-            if (permission.getRole().getRole().equals("user")) {
+            if (permission.getRole().getRole().equals("USER")) {
                 grantedAuthority.add(new SimpleGrantedAuthority("USER"));
             }
-            if (permission.getRole().getRole().equals("admin")) {
+            if (permission.getRole().getRole().equals("ADMIN")) {
                 grantedAuthority.add(new SimpleGrantedAuthority("ADMIN"));
             }
 
